@@ -3,7 +3,7 @@ namespace TestLib
 {
 	public class MyClass
 	{
-		public const string Type = "Ref";
+		public const string Type = "BUILD_TYPE";
 		public MyClass()
 		{
 		}
