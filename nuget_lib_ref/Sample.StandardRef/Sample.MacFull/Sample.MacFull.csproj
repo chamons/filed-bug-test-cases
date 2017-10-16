@@ -8,9 +8,9 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Sample.MacFull</RootNamespace>
     <AssemblyName>Sample.MacFull</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
-    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <UseXamMacFullFramework>true</UseXamMacFullFramework>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +45,7 @@
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
-    <LinkMode>SdkOnly</LinkMode>
+    <LinkMode>None</LinkMode>
     <PlatformTarget>x86</PlatformTarget>
     <HttpClientHandler></HttpClientHandler>
     <XamMacArch></XamMacArch>
@@ -55,7 +55,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Mac" />
     <Reference Include="TestLib">
-      <HintPath>..\packages\TestLib.1.0.0\lib\xamarinmac20\TestLib.dll</HintPath>
+      <HintPath>..\packages\TestLib.1.0.0\lib\net47\TestLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

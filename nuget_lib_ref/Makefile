@@ -1,8 +1,27 @@
 all:: clean nuget sample
 
-sample::
-	
-	
+sample:: sample-standard sample-packageref
+
+sample-packageref::
+	nuget restore Sample.PackageRef/Sample.sln
+	msbuild Sample.PackageRef/Sample.sln /v:quiet /nologo
+	echo "Testing package refs"
+	echo "These all should be lib but are ref (since things do not work)"
+	mono ./Sample.PackageRef/Sample.Console/bin/Debug/Sample.Console.exe
+	./Sample.PackageRef/Sample.MacFull/bin/Debug/Sample.MacFull.app/Contents/MacOS/Sample.MacFull
+	./Sample.PackageRef/Sample.MacModern/bin/Debug/Sample.MacModern.app/Contents/MacOS/Sample.MacModern
+	read -p $$'Action Required:\n\tTest ./Sample.PackageRef/Sample.iOS/Sample.iOS.csproj by hand.\nPress enter to continue: '
+
+sample-standard::
+	nuget restore Sample.StandardRef/Sample.sln
+	msbuild Sample.StandardRef/Sample.sln /v:quiet /nologo
+	echo "Testing standard refs"
+	echo "These all should be lib if things are working"
+	mono ./Sample.StandardRef/Sample.Console/bin/Debug/Sample.Console.exe
+	./Sample.StandardRef/Sample.MacFull/bin/Debug/Sample.MacFull.app/Contents/MacOS/Sample.MacFull
+	./Sample.StandardRef/Sample.MacModern/bin/Debug/Sample.MacModern.app/Contents/MacOS/Sample.MacModern
+	read -p $$'Action Required:\n\tTest ./Sample.StandardRef/Sample.iOS/Sample.iOS.csproj by hand.\nPress enter to continue: '
+
 nuget:: TestLib.1.0.0.nupkg
 	read -p $$'Action Required:\n\tCopy TestLib.1.0.0.nupkg to the location of your local nuget feed.\nPress enter to continue: '
 	nuget locals all -clear
@@ -31,3 +50,4 @@ clean::
 	rm -f TestLib/MyClass.cs
 	rm -f TestLib.1.0.0.nupkg
 	msbuild TestLib/TestLib.sln /t:clean /v:quiet /nologo
+	msbuild Sample.StandardRef/Sample.sln /t:clean /v:quiet /nologo

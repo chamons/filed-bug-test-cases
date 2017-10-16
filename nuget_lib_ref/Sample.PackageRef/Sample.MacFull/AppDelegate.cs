@@ -13,6 +13,7 @@ namespace Sample.MacFull
 		public override void DidFinishLaunching(NSNotification notification)
 		{
 			System.Console.WriteLine(TestLib.MyClass.Type);
+			NSApplication.SharedApplication.Terminate(this);
 		}
 
 		public override void WillTerminate(NSNotification notification)

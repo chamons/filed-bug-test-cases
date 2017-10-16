@@ -101,6 +101,9 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="TestLib" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="ViewController.cs" />

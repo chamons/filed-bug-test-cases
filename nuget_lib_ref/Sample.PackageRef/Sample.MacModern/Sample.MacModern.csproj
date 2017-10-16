@@ -85,6 +85,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="TestLib" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
