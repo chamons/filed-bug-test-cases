@@ -1,5 +1,11 @@
-all:: clean TestLib.1.0.0.nupkg
+all:: clean nuget sample
+
+sample::
 	
+	
+nuget:: TestLib.1.0.0.nupkg
+	read -p $$'Action Required:\n\tCopy TestLib.1.0.0.nupkg to the location of your local nuget feed.\nPress enter to continue: '
+	nuget locals all -clear
 
 TestLib.1.0.0.nupkg:
 	sed 's/BUILD_TYPE/lib/g' TestLib/MyClass.cs.in > TestLib/MyClass.cs 
