@@ -1,10 +1,6 @@
 using System;
 
-#if USE_XM
 using nuint = System.nuint;
-#else
-using nuint = CSCHack.nuint;
-#endif
 
 namespace Test
 {
