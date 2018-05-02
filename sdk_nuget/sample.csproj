@@ -1,0 +1,10 @@
+<Project Sdk="sdk-project-prototype/0.1.0">
+    <PropertyGroup>
+    	<Name>Bob</Name>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+      <Optimize>false</Optimize>
+      <OutputPath>bin\Test</OutputPath>
+      <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+</Project>

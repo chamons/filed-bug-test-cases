@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>sdk-project-prototype</id>
+    <version>0.1</version>
+    <description>Prototype</description>
+    <authors>chamons</authors>
+    <owners>chamosn</owners>
+    <copyright></copyright>
+    <projectUrl>https://github.com/chamons/sdk-project-prototype</projectUrl>
+    <licenseUrl>https://github.com/chamons/sdk-project-prototype/blob/master/LICENSE</licenseUrl>
+    <iconUrl>https://github.com/chamons/sdk-project-prototype/blob/master/LICENSE</iconUrl>
+    <tags></tags>
+    <packageTypes>
+        <packageType name="MSBuildSdk" />
+    </packageTypes>
+    <dependencies>
+      <dependency id="Xamarin.Build.Download" version="0.4.10" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Sdk\**" target="Sdk" />
+    <file src="Tasks/bin/Debug/Sdk.Project.Prototype.Tasks.dll" target="Sdk" />
+  </files>
+</package>
