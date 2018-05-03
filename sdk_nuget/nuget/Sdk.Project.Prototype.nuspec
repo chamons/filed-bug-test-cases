@@ -20,6 +20,5 @@
   </metadata>
   <files>
     <file src="Sdk\**" target="Sdk" />
-    <file src="Tasks/bin/Debug/Sdk.Project.Prototype.Tasks.dll" target="Sdk" />
   </files>
 </package>
