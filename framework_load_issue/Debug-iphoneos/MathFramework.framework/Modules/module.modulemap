@@ -1,0 +1,6 @@
+framework module MathFramework {
+  umbrella header "MathFramework.h"
+
+  export *
+  module * { export * }
+}
