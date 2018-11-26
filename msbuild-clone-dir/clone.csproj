@@ -1,0 +1,15 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+	<PropertyGroup>
+		<OutputPath>bin</OutputPath>  
+	</PropertyGroup>
+	<ItemGroup>  
+		<FrameworkFiles Include="$(MSBuildProjectDirectory)/data/**/*.*" />  
+	</ItemGroup>  
+	<Target Name="Build">
+		<MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+	        <Copy SourceFiles="@(FrameworkFiles)"  DestinationFolder="$(OutputPath)\%(RecursiveDir)"/>  
+	</Target>
+	<Target Name="Clean">
+		<RemoveDir Directories="$(OutputPath)"/>  
+	</Target>
+</Project> 
